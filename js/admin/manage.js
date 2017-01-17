@@ -11,9 +11,11 @@ $(function()
 	$('#address_fieldzone').parent().append($('#js-gmap-wrapper'));
 	$('#js-gmap-wrapper').removeClass('hidden');
 
-
 	var map = new google.maps.Map(document.getElementById('js-gmap-renderer'), {mapTypeId: google.maps.MapTypeId.ROADMAP});
 	var geocoder = new google.maps.Geocoder();
+
+	intelli.geocoder = geocoder; 
+	intelli.map = map;
 
 	if (itemPosition.lat.length != 0 && itemPosition.lng.length != 0)
 	{
@@ -24,6 +26,12 @@ $(function()
 	{
 		map.setZoom(3);
 		geooptions = {address: 'USA'};
+	}
+
+	var d = document.getElementById('venue');
+	if(d.value != '') {
+		map.setZoom(3);
+		geooptions = {address: d.value};
 	}
 
 	geocoder.geocode(geooptions, function(results, status)
@@ -48,11 +56,12 @@ $(function()
 					$('input[name="latitude"]', mapInfo).val(intelli.marker.position.lat());
 				}
 			);
+			
+			$('input[name="longitude"]', mapInfo).val(intelli.marker.position.lng());
+			$('input[name="latitude"]', mapInfo).val(intelli.marker.position.lat());
+
 		}
 	});
-
-	intelli.geocoder = geocoder;
-	intelli.map = map;
 
 	google.maps.event.trigger(intelli.map, 'resize');
 	if (intelli.marker !== null)
