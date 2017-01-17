@@ -74,7 +74,7 @@ else
 		'date' => $date,
 		'date_end' => $date,
 		'venue' => '',
-		'description' => 'Detailed description of event goes here...', // TODO: Is it needed to be translated?
+		'description' => iaLanguage::get('event_body'),
 		'repeat' => 'none'
 	);
 }

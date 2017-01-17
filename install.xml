@@ -100,6 +100,7 @@
 		<phrase category="frontend" key="no_events">No events to show.</phrase>
 		<phrase category="frontend" key="no_events_for_day">No events on this day.</phrase>
 		<phrase category="frontend" key="no_search_term_provided">Nothing to search</phrase>
+		<phrase category="frontend" key="event_body">Detailed description of event goes here...</phrase>
 		<phrase category="frontend" key="published_by">Published by</phrase>
 		<phrase category="frontend" key="read_more">Read more</phrase>
 		<phrase category="frontend" key="today">Today</phrase>
